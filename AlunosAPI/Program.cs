@@ -6,7 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddDbContext<AppDbContext>(options => {
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
@@ -29,7 +30,13 @@ using (var serviceScope = app.Services.GetService<IServiceScopeFactory>().Create
     var context = serviceScope.ServiceProvider.GetRequiredService<AppDbContext>();
     context.Database.EnsureCreated();
 }
-
+app.UseCors(options =>
+    {
+        options.WithOrigins("http://localhost:3000");
+        options.AllowAnyMethod();
+        options.AllowAnyHeader();
+    }
+);
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
