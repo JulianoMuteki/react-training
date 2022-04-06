@@ -1,7 +1,9 @@
 # react-training
 React ASP.NET Core Macoratti
 
-# Class 1
+https://www.youtube.com/playlist?list=PLJ4k1IC8GhW1xK5YEkiYdbWiOiXHMZyen
+
+# Instructions
 ## Docker
 ### Commands
  - docker pull mcr.microsoft.com/mssql/server
@@ -9,6 +11,7 @@ React ASP.NET Core Macoratti
 
 ConnectionStrings "Server=localhost,1433;Database=AlunosDB;User ID=sa;Password=1q2w3e4r@#$"
 
+## Dotnet
 ### Migrations commands line
 - dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 - dotnet ef migrations add Initial
